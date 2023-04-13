@@ -17,8 +17,7 @@ return new class extends Migration
         Schema::create('datos', function (Blueprint $table) {
 
             $table->string("humedad");
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamps();
         });
 
     }

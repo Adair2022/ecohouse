@@ -12,6 +12,5 @@ class Datos extends Model
     protected $fillable=[
         'numedad',
         'created_at',
-        'updated_at',
       ];
 }
