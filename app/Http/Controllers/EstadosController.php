@@ -16,6 +16,9 @@ class EstadosController extends Controller
     public function index()
     {
         //
+        $usuarios=estados::all();
+
+        return view('Usuarios.index'  ,compact('usuarios'));
     }
 
     /**
@@ -26,6 +29,8 @@ class EstadosController extends Controller
     public function create()
     {
         //
+        return view("usuarios.create");
+
     }
 
     /**
