@@ -1,14 +1,29 @@
 @yield('container')
 @include('layouts.menu')
 <div class="main-panel" id="main-panel">
-<div class="panel-header panel-header-lg">
-    <canvas id="bigDashboardChart"></canvas>
-  </div>
-  <div class="content">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card card-chart">
-          <div class="card-header">
+    <table  class="table table-striped" style="margin: 5%; ">
+     <thead>
+         <th>HUMEDAD</th>
+         <th>HORA</th>
+
+     </thead>
+     <tbody>
+         @foreach($datos as $dato)
+               <td>{{$dato->humedad}}</td>
+               <td>{{$dato->created_at}}</td>
+            </tbody>
+            @endforeach
+    </table>
+    <div class="panel-header panel-header-lg">
+        <canvas id="bigDashboardChart"></canvas>
+    </div>
+    <div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card card-chart">
+                    <div class="card-header">
             <h5 class="card-category">Global Sales</h5>
             <h4 class="card-title">Shipped Products</h4>
             <div class="dropdown">
@@ -252,7 +267,7 @@
                       Chile
                     </td>
                     <td>
-                      Gloucester
+                    Gloucester
                     </td>
                     <td class="text-right">
                       $78,615

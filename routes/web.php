@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\TipoUsuarioController;
@@ -18,9 +19,9 @@ use App\Http\Controllers\RequerimientosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}); 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //RUTAS PROYECTO
 Route::resource('usuarios', UsuariosController::class);
@@ -30,6 +31,7 @@ Route::resource('invernadero', DepositoController::class);
 Route::resource('sensor', SensorController::class);
 Route::resource('requisitos', RequerimientosController::class);
 
+Route::name('container')->get('/', [DatosController::class, 'index']);
 //
 Route::resource('estados',EstadosController::class);
 Route::resource('municipios',MunicipiosController::class);
