@@ -16,5 +16,5 @@ class surcos extends Model
         'humedad_max',
         'temperatura_min',
         'temperatura_max',
-          ];
+        ];
 }

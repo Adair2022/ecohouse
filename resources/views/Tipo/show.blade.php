@@ -25,23 +25,26 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">Tipo Usuario</h4>
+            <h4 class="card-title">t_usuario Usuario</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead class="text-danger">
                   <th scope="col">ID</th>
-                  <th scope="col">Tipo</th>
+                  <th scope="col">t_usuario</th>
                   <th>Usuario</th>
                 </thead>
                 <tbody>
+                  @foreach($t_usuario as $t_usuario)
+
                   <tr>
-                  <td>{{$tipo->id}}</td>
-                  <td>{{$tipo->nombre_t}}</td>
-                  <td>{{$tipo->Usuario->nombre_u}}</td>
+                  <td>{{$t_usuario->id_t}}</td>
+                  <td>{{$t_usuario->nombre_t}}</td>
+                  <td>{{$t_usuario->usuario}}</td>
                   <a href="/t_usuario" class="btn btn-danger m-3">Salir</a>
                 </tr>
+                @endforeach
                 </tbody>
               </table>
             </div>

@@ -26,10 +26,10 @@
           <div class="card-header">
             <h4 class="card-title">Alta Tipo Usuario</h4>
           </div>
-          <form action="{{ url('t_usuario')}}" id="agregar" method="post" enctype="multipart/form-data">
+          <form action="{{ route('t_usuario.store') }}" id="agregar" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="form-floating mb-3">
-             <select class="form-control form-select" name="nombre_t" id="nombre_t">
+             <select class="form-control form-select" name="nombre_t" id="nombre_   t">
               <option>Administrador</option>
               <option>Usuario</option>
               <option>Cliente</option>
@@ -39,8 +39,8 @@
           <div class="form-floating mb-3">
             <select class="form-control form-select" aria-label="Default select example" name="usuario_id">
                 <option selected>Elige el Usuario</option>
-                    @foreach($usuarios as $usuario)   
-                <option value={{$usuario->id}}>{{$usuario->nombre_u}}</option>
+                    @foreach($usuarios as $usuario)
+                <option value={{$usuario->id}}>{{$usuario->nombre}}</option>
                    @endforeach
                 </select>
                 <label for="form-floating mb-3">Usuario</label>
@@ -87,4 +87,4 @@ swal.fire(
 }
 })
 });
-</script>   
+</script>

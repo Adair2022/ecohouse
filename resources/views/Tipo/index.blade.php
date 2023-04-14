@@ -45,18 +45,18 @@
                 <tbody>
                   @foreach($tipos as $tipo)
                   <tr>
-                  <td>{{$tipo->id}}</td>
+                  <td>{{$tipo->id_t}}</td>
                   <td>{{$tipo->nombre_t}}</td>
-                  <td>{{$tipo->nombre_u}}</td>
-                  <td><a href="t_usuario/{{ $tipo->id }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
+                  <td>{{$tipo->nombre}}</td>
+                  <td><a href="t_usuario/{{ $tipo->id_t }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
                   <td>
-                    <form action="{{ route('t_usuario.destroy', $tipo->id) }}" class="d-inline formulario-eliminar" method="POST">
+                    <form action="{{ route('t_usuario.destroy', $tipo->id_t) }}" class="d-inline formulario-eliminar" method="POST">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger m-6"><i class="fa-solid fa-trash"></i></button>
                   </form>
                   </td>
-                  <td><a href="t_usuario/{{ $tipo->id }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
+                  <td><a href="t_usuario/{{ $tipo->id_t }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
                 </tr>
                 @endforeach
                 </tbody>

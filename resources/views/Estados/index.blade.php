@@ -10,7 +10,7 @@
     @endsection
 
     <div class="container">
-        <h1>Formulario de Registro</h1>
+
         <hr>
         <select id="estados">
             <option value="0">-- Seleccione un estado --</option>
