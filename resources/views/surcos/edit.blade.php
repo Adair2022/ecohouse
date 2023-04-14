@@ -28,32 +28,43 @@
                     <div class="card-header">
                         <h4 class="card-title">Editar Invernadero</h4>
                     </div>
-                    <form action="{{ route('ubicacion.update', $ubicacion->id) }}" id="editar" method="POST"
+                    <form action="{{ route('surcos.update', $surcos->id) }}" id="editar" method="POST"
                         enctype="multipart/form-data">
                         {!! csrf_field() !!}
                         @method('PATCH')
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" value="{{ $ubicacion->id }}"
+                            <input class="form-control" type="text" value="{{ $surcos->id }}"
                                 aria-label="Disabled input example" disabled />
                             <label for="">ID</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="nombre" name="nombre"
-                                value="{{ $ubicacion->nombre }}" required><br>
-                            <label for="floatingInput">Nombre</label>
+                            <input class="form-control" type="text" id="nombre" name="numero_surco"
+                                value="{{ $surcos->numero_surco }}" required><br>
+                            <label for="floatingInput">Numero de surco</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="app" name="info"
-                                value="{{ $ubicacion->info }}" required><br>
-                            <label for="floatingInput">Informacion</label>
+                            <input class="form-control" type="text" id="app" name="humedad_min"
+                                value="{{ $surcos->humedad_min }}" required><br>
+                            <label for="floatingInput">humedad minima</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="apm" name="ubicacion"
-                                value="{{ $ubicacion->ubicacion }}" required><br>
-                            <label for="floatingInput"> ubicacion</label>
+                            <input class="form-control" type="text" id="apm" name="humedad_max"
+                                value="{{ $surcos->humedad_max }}" required><br>
+                            <label for="floatingInput"> humedad maxima</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="apm" name="temperatura_min"
+                                value="{{ $surcos->temperatura_min }}" required><br>
+                            <label for="floatingInput"> temperatura minima</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="apm" name="temperatura_max"
+                                value="{{ $surcos->temperatura_max }}" required><br>
+                            <label for="floatingInput"> temperatura maxima</label>
                         </div>
 
-                        <a class="btn btn-danger m-1" href="/ubicacion">Cancelar</a>
+
+                        <a class="btn btn-danger m-1" href="/surcos">Cancelar</a>
                         <button type="submit" class="btn btn-success m-1" value="update">Guardar</button>
                     </form>
                 </div>

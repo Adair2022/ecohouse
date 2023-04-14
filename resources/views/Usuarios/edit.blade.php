@@ -26,7 +26,7 @@
           <div class="card-header">
             <h4 class="card-title">Editar Usuarios</h4>
           </div>
-          <form action="{{ route('usuarios.update',$usuarios->id) }}" id="editar" method="POST" enctype="multipart/form-data"> 
+          <form action="{{ route('usuarios.update',$usuarios->id) }}" id="editar" method="POST" enctype="multipart/form-data">
             {!! csrf_field() !!}
             @method("PATCH")
             <div class="form-floating mb-3">
@@ -55,14 +55,14 @@
     </div>
     <div class="grid grid-cols-1 mt-5 mx-7">
         <img src="/imagen/{{ $usuarios->imagen }}" width="250px" id="imagenSeleccionada">
-    </div>                                    
-    
+    </div>
+
     <div class="grid grid-cols-1 mt-5 mx-7">
     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Subir Imagen</label>
         <div class='flex items-center justify-center w-full'>
             <label class='flex flex-col border-4 border-dashed w-full h-32 hover:bg-gray-100 hover:border-purple-300 group'>
             <input name="imagen" id="imagen" type='file' class="hidden" value="{{$usuarios->imagen}}"  accept="image/*" />
-           
+
             </label>
         </div>
     </div>
@@ -113,7 +113,7 @@ swal.fire(
 }
 })
 });
-</script>   
+</script>
 
 {{-- IMAGEN VER --}}
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

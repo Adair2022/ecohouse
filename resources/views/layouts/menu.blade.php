@@ -55,7 +55,7 @@
               <p>Invernadero</p>
             </a>
           </li>
-          
+
           <li>
             <a href="/sensor">
               <i class="fa-sharp fa-solid fa-video"></i>
@@ -63,7 +63,7 @@
             </a>
           </li>
           <li>
-            <a href="/requisitos">
+            <a href="/surcos">
               <i class="fa-sharp fa-solid fa-clipboard"></i>
               <p>Surcos</p>
             </a>

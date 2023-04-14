@@ -33,21 +33,24 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th scope="col"> ID</th>
-                                    <th scope="col">Nombre </th>
-                                    <th scope="col">informacion</th>
-                                    <th scope="col">ubicacion</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">numero de sruco</th>
+                                    <th class="text-center">humedad minima</th>
+                                    <th class="text-center">humedad maxima</th>
+                                    <th class="text-center">temperatuta minima</th>
+                                    <th class="text-center">temperatura maxima</th>
 
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>{{$surcos->id}}</td>
+                                        <td>{{$surcos->numero_surco}}</td>
+                                        <td>{{$surcos->humedad_min}}</td>
+                                        <td>{{$surcos->humedad_max}}</td>
+                                        <td>{{$surcos->temperatura_min}}</td>
+                                        <td>{{$surcos->temperatura_max}}</td>
 
-                                        <td>{{ $green->id }}</td>
-                                        <td>{{ $green->nombre }}</td>
-                                        <td>{{ $green->info }}</td>
-                                        <td>{{ $green->ubicacion }}</td>
-
-                                        <a href="/ubicacion" class="btn btn-danger m-3">Salir</a>
+                                        <a href="/surcos" class="btn btn-danger m-3">Salir</a>
                                     </tr>
                                 </tbody>
                             </table>

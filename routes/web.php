@@ -6,7 +6,7 @@ use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\TipoUsuarioController;
 use App\Http\Controllers\UbicacionController;
 use App\Http\Controllers\DepositoController;
-use App\Http\Controllers\SensorController;
+use App\Http\Controllers\SurcosController;
 use App\Http\Controllers\RequerimientosController;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,7 @@ Route::resource('t_usuario', TipoUsuarioController::class);
 Route::resource('ubicacion',UbicacionController::class);
 Route::resource('invernadero', DepositoController::class);
 Route::resource('sensor', SensorController::class);
+Route::resource('surcos', SurcosController::class);
 Route::resource('requisitos', RequerimientosController::class);
 
 Route::name('container')->get('/', [DatosController::class, 'index']);

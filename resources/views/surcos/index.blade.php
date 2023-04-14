@@ -25,39 +25,43 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">INVERNADERO</h4>
+            <h4 class="card-title">SURCOS</h4>
           </div>
           <div class="d-flex justify-content-end">
-            <a class="btn btn-success" href="ubicacion/create"><i class="fa-sharp fa-solid fa-boxes-stacked"></i></a>
+            <a class="btn btn-success" href="surcos/create"><i class="fa-sharp fa-solid fa-boxes-stacked"></i></a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-striped">
-                <thead class="text-danger">
+                <thead class="text">
                   <th scope="col">ID</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Información</th>
-                  <th scope="col">Ubicacion</th>
+                  <th scope="col">numero de sruco</th>
+                  <th class="text-center">humedad minima</th>
+                  <th class="text-center">humedad maxima</th>
+                  <th class="text-center">temperatuta minima</th>
+                  <th class="text-center">temperatura maxima</th>
                   <th class="text-center">Mostrar</th>
                   <th class="text-center">Eliminar</th>
                   <th class="text-center">Modificar</th>
                 </thead>
                 <tbody>
-                  @foreach ($green as $ubica)
                   <tr>
-                  <td>{{$ubica->id}}</td>
-                  <td>{{$ubica->nombre}}</td>
-                  <td>{{$ubica->info}}</td>
-                  <td>{{$ubica->ubicacion}}</td>
+                    @foreach ($surcos as $surcos)
+                    <td>{{$surcos->id}}</td>
+                    <td>{{$surcos->numero_surco}}</td>
+                    <td>{{$surcos->humedad_min}}</td>
+                    <td>{{$surcos->humedad_max}}</td>
+                    <td>{{$surcos->temperatura_min}}</td>
+                    <td>{{$surcos->temperatura_max}}</td>
 
-                  <td><a href="ubicacion/{{ $ubica->id }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
-                  <td> <form action="{{ route('ubicacion.destroy', $ubica->id) }}" class="d-inline formulario-eliminar" method="POST">
+                  <td><a href="surcos/{{ $surcos->id }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
+                  <td> <form action="{{ route('surcos.destroy', $surcos->id) }}" class="d-inline formulario-eliminar" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger m-6"><i class="fa-solid fa-trash"></i></button>
                   </form>
                                                 </td>
-                <td><a href="ubicacion/{{ $ubica->id }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
+                <td><a href="surcos/{{ $surcos->id }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
                 </tr>
                 @endforeach
                 </tbody>

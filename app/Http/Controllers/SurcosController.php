@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\surcos;
-use App\Http\Requests\StoresurcosRequest;
-use App\Http\Requests\UpdatesurcosRequest;
+use Illuminate\Http\Request;
 
 class SurcosController extends Controller
 {
+    //
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,10 @@ class SurcosController extends Controller
      */
     public function index()
     {
-        //
+        $surcos = surcos::all();
+        return view("surcos.index")
+        ->with(['surcos' => $surcos]);
+
     }
 
     /**
@@ -25,62 +29,93 @@ class SurcosController extends Controller
      */
     public function create()
     {
-        //
+        $surcos = surcos::all();
+        return view('surcos.create' ,compact('surcos'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoresurcosRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoresurcosRequest $request)
+    public function store(Request $request)
     {
         //
+        $surcos=$request->all();
+
+        surcos::create($surcos);
+        return redirect()->route('surcos.index')->with('agregar','Ok');
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\surcos  $surcos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(surcos $surcos)
+    public function show($id)
     {
         //
+        $surcos = surcos::find($id);
+        return view('surcos.show', compact('surcos'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\surcos  $surcos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(surcos $surcos)
+    public function edit($id)
     {
         //
+        $surcos = surcos::all();
+
+        $surcos = surcos::findOrFail($id);
+
+
+        return view('surcos.edit', compact('surcos'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatesurcosRequest  $request
-     * @param  \App\Models\surcos  $surcos
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatesurcosRequest $request, surcos $surcos)
+    public function update(Request $request, $id)
     {
         //
+        $surco = surcos::findOrFail($id);
+
+        $surcos = $request->all();
+        $surco->update($surcos);
+
+        return redirect()->route('surcos.index')->with('editar', 'Ok');
     }
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\surcos  $surcos
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(surcos $surcos)
+    public function destroy($id)
     {
         //
-    }
+        $surco = surcos::find($id);
+
+        if ($surco) {
+            $surco->delete();
+            return redirect()->route('surcos.index')->with('eliminar','Ok');
+        } else {
+            return redirect()->route('surcos.index');
+        }
+        }
 }

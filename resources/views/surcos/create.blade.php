@@ -24,22 +24,36 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">Alta Ubicacion</h4>
+            <h4 class="card-title">Alta de surcos</h4>
           </div>
-          <form action="{{ url('ubicacion')}}" method="post" enctype="multipart/form-data">
+          <form action="{{ url('surcos')}}" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nombre_t" placeholder="" name="nombre" required>
-                <label for="floatingInput">Nombre</label>
+                <input class="form-control" type="text" id="nombre" name="numero_surco"
+                     required><br>
+                <label for="floatingInput">Numero de surco</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nombre_t" placeholder="" name="info" required>
-                <label for="floatingInput">Informacion</label>
+                <input class="form-control" type="text" id="app" name="humedad_min"
+                    required><br>
+                <label for="floatingInput">humedad minima</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nombre_t" placeholder="" name="ubicacion" required>
-                <label for="floatingInput">Ubicacion</label>
+                <input class="form-control" type="text" id="apm" name="humedad_max"
+                     required><br>
+                <label for="floatingInput"> humedad maxima</label>
             </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" id="apm" name="temperatura_min"
+                     required><br>
+                <label for="floatingInput"> temperatura minima</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" id="apm" name="temperatura_max"
+                     required><br>
+                <label for="floatingInput"> temperatura maxima</label>
+            </div>
+
 
   <a href="/usuarios" class="btn btn-danger m-3">Cancelar</a>
   <button type="submit" class="btn btn-success m-3" value="save">Agregar</button>
