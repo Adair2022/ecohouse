@@ -4,6 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
   <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -19,6 +20,21 @@
   <link href="{{asset('css/now-ui-dashboard.css?v=1.5.0')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('demo/demo.css')}}" rel="stylesheet" />
+  <script>
+    $(document).ready(function(){
+        // -----------------------------------------------------------
+        $("#estados").on('change', function() {
+                var id_estado =  $(this).find(":selected").val();
+                    console.log(id_estado);
+                if(id_estado == 0){
+                    $("#municipios").html('<option value="0">-- Seleccione un estado antes --</option>');
+                }
+                else{
+                    $("#municipios").load('js_municipios?id_estado=' + id_estado);
+                }
+        });
+    });
+</script>
 </head>
 
 <body class="">

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\estados;
 use App\Http\Requests\StoreestadosRequest;
 use App\Http\Requests\UpdateestadosRequest;
+use App\Models\Municipios;
+use App\Models\municipiosdos;
+use Illuminate\Http\Request;
+
 
 class EstadosController extends Controller
 {
@@ -13,13 +17,6 @@ class EstadosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        $usuarios=estados::all();
-
-        return view('Usuarios.index'  ,compact('usuarios'));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -87,5 +84,27 @@ class EstadosController extends Controller
     public function destroy(estados $estados)
     {
         //
+    }
+    public function index()
+    {
+        //
+        $estados = Estados::all();
+
+        return view("estados/index")
+            ->with(['estados' => $estados]);
+    }
+    public function js_municipios(Request $request){
+        $id_estado = $request->get('id_estado');
+        $municipios = Municipios::where('id_estado',$id_estado)->get();
+
+        return view("js_municipios")
+        ->with(['municipios' => $municipios]);
+    }
+    //---------------------------  Combos dinamicos: Estados  ------------------------
+       public function registro(){
+        $estados = Estados::all();
+
+        return view("estados/index")
+            ->with(['estados' => $estados]);
     }
 }

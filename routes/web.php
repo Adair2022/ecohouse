@@ -8,6 +8,7 @@ use App\Http\Controllers\UbicacionController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\SurcosController;
 use App\Http\Controllers\RequerimientosController;
+use App\Http\Controllers\EstadosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,5 +37,8 @@ Route::name('container')->get('/', [DatosController::class, 'index']);
 //
 Route::resource('estados',EstadosController::class);
 Route::resource('municipios',MunicipiosController::class);
+Route::name('registro')->get('registro', [UserController::class, 'registro']);
+Route::name('js_municipios')->get('js_municipios', [EstadosController::class, 'js_municipios']);
+
 
 

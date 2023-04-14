@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('municipiosdos', function (Blueprint $table) {
-            $table->id();
-            /* realizo llave foranea */
-            $table->foreignId('id_estado')->constrained('estados', 'id');
+        Schema::create('estados', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nombre');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamps();
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipiosdos');
+        Schema::dropIfExists('estados');
     }
 };

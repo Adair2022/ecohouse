@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Estados;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MunicipiosdosSeeder extends Seeder
+class EstadosSedeer extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,5 +16,6 @@ class MunicipiosdosSeeder extends Seeder
     public function run()
     {
         //
+        Estados::factory()->count(15)->create();
     }
 }

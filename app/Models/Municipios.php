@@ -5,10 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estados extends Model
+class Municipios extends Model
 {
     use HasFactory;
-    protected $table = 'estados';
+
+    protected $table = 'municipios';
 	protected $primaryKey = 'id';
-	protected $fillable = ['nombre'];
+	protected $fillable = [
+            'cp',
+            'nombre',
+            'id_estado'
+        ];
 }
