@@ -40,9 +40,7 @@
                   <th scope="col">
                     ID
                   </th>
-                  <th scope="col">
-                    Nombre
-                  </th>
+                  <th scope="col">       Nombre             </th>
                   <th scope="col">APP</th>
                   <th scope="col">APM</th>
                   <th scope="col">Correo</th>
@@ -56,7 +54,7 @@
                   @foreach($usuarios as $usuario)
                   <tr>
                   <td>{{$usuario->id}}</td>
-                  <td>{{$usuario->nombre_u}}</td>
+                  <td>{{$usuario->nombre}}</td>
                   <td>{{$usuario->app}}</td>
                   <td>{{$usuario->apm}}</td>
                   <td>{{$usuario->email}}</td>
