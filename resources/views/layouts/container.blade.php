@@ -3,14 +3,16 @@
 <div class="main-panel" id="main-panel">
     <table  class="table table-striped" style="margin: 5%; ">
      <thead>
+         <th>planta</th>
          <th>HUMEDAD</th>
          <th>HORA</th>
 
      </thead>
      <tbody>
          @foreach($datos as $dato)
-               <td>{{$dato->humedad}}</td>
-               <td>{{$dato->created_at}}</td>
+         <td>{{$dato->planta}}</td>
+         <td>{{$dato->humedad}}</td>
+         <td>{{$dato->hora}}</td>
             </tbody>
             @endforeach
     </table>

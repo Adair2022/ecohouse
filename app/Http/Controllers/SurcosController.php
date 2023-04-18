@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\surcos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class SurcosController extends Controller
 {
@@ -16,6 +18,11 @@ class SurcosController extends Controller
      */
     public function index()
     {
+        $users = DB::table('surcos')
+        ->join('plantas', 'plantas.id', '=', 'surcos.id_planta')
+        ->join('sensores', 'sensores.id', '=', 'datos.id_planta')
+        ->select('datos.humedad as humedad', 'datos.created_at as hora', 'plantas.nombre as planta')
+        ->get();
         $surcos = surcos::all();
         return view("surcos.index")
         ->with(['surcos' => $surcos]);

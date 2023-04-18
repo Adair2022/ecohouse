@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string("humedad_max");
             $table->string("temperatura_min");
             $table->string("temperatura_max");
+            $table->string("id_sensor");
+            $table->string("id_planta");
+
             $table->timestamps();
         });
     }

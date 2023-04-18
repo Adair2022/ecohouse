@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('datos', function (Blueprint $table) {
 
             $table->string("humedad");
+            $table->string("id_planta");
             $table->timestamp('created_at')->useCurrent();
         });
 

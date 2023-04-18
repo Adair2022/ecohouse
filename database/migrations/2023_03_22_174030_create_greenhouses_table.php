@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("nombre");
             $table->string("info");
             $table->string("ubicacion");
+            $table->string("id_usuario");
+            $table->string("id_surcos");
             $table->timestamps();
         });
     }
