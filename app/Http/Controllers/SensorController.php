@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\sensor;
 use Illuminate\Http\Request;
 
 class SensorController extends Controller
@@ -14,7 +15,9 @@ class SensorController extends Controller
      */
     public function index()
     {
-        return view("Sensor/index");
+        $green = sensor::all();
+        return view("sensor.index")
+        ->with(['green' => $green]);
     }
 
     /**
@@ -25,6 +28,7 @@ class SensorController extends Controller
     public function create()
     {
         //
+        return view('sensor.create');
     }
 
     /**
@@ -36,6 +40,10 @@ class SensorController extends Controller
     public function store(Request $request)
     {
         //
+        $green=$request->all();
+
+        sensor::create($green);
+        return redirect()->route('sensor.index')->with('agregar','Ok');
     }
 
     /**
@@ -47,6 +55,8 @@ class SensorController extends Controller
     public function show($id)
     {
         //
+        $green = sensor::find($id);
+        return view('sensor.show', compact('green'));
     }
 
     /**
@@ -58,6 +68,12 @@ class SensorController extends Controller
     public function edit($id)
     {
         //
+        $sensor = sensor::all();
+
+        $sensor = sensor::findOrFail($id);
+
+
+        return view('sensor.edit', compact('sensor'));
     }
 
     /**
@@ -70,7 +86,14 @@ class SensorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $sensor = sensor::findOrFail($id);
+
+        $green = $request->all();
+        $sensor->update($green);
+
+        return redirect()->route('sensor.index')->with('editar', 'Ok');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,5 +104,14 @@ class SensorController extends Controller
     public function destroy($id)
     {
         //
+        $usuario = sensor::find($id);
+
+        if ($usuario) {
+            $usuario->delete();
+            return redirect()->route('sensor.index')->with('eliminar','Ok');
+        } else {
+            return redirect()->route('sensor.index');
+        }
+        }
     }
-}
+

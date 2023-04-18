@@ -27,30 +27,33 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">green</h4>
+                        <h4 class="card-title">plantas</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped">
-                                <thead class=" text-primary">
-                                    <th scope="col"> ID</th>
-                                    <th scope="col">Nombre </th>
-                                    <th scope="col">status</th>
-                                    <th scope="col">cantidad</th>
+                                <thead class="text-danger">
+                                  <th scope="col">ID</th>
+                                  <th scope="col">nombre</th>
+                                  <th scope="col">img</th>
+                                  <th class="text-center">detalle</th>
+                                  <th class="text-center">estatus</th>
+                                  <th class="text-center">color</th>
 
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                  <tr>
+                                    <td>{{$green->id}}</td>
+                                    <td>{{$green->nombre}}</td>
+                                    <td>{{$green->img}}</td>
+                                    <td>{{$green->detalle}}</td>
+                                    <td>{{$green->estatus}}</td>
+                                    <td>{{$green->color}}</td>
 
-                                        <td>{{ $green->id }}</td>
-                                        <td>{{ $green->nombre }}</td>
-                                        <td>{{ $green->status }}</td>
-                                        <td>{{ $green->cantidad }}</td>
 
-                                        <a href="/ubicacion" class="btn btn-danger m-3">Salir</a>
-                                    </tr>
+                                </tr>
                                 </tbody>
-                            </table>
+                              </table>
                         </div>
                     </div>
                 </div>

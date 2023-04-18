@@ -37,18 +37,7 @@
               <p>Tipo Usuario</p>
             </a>
           </li>
-          <li>
-            <a href="/estados">
-              <i class="fa-solid fa-users"></i>
-              <p>Estados</p>
-            </a>
-          </li>
-          <li>
-            <a href="/municipios">
-              <i class="fa-solid fa-users"></i>
-              <p>Municipios</p>
-            </a>
-          </li>
+
           <li>
             <a href="/ubicacion">
               <i class="fa-sharp fa-solid fa-location-dot"></i>
@@ -66,6 +55,12 @@
             <a href="/surcos">
               <i class="fa-sharp fa-solid fa-clipboard"></i>
               <p>Surcos</p>
+            </a>
+          </li>
+           <li>
+            <a href="/plantas">
+                <i class="fa-solid fa-leaf-maple"></i>
+              <p>Plantas</p>
             </a>
           </li>
         </ul>

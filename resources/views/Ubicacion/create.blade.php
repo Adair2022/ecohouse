@@ -41,7 +41,7 @@
                 <label for="floatingInput">Ubicacion</label>
             </div>
 
-  <a href="/usuarios" class="btn btn-danger m-3">Cancelar</a>
+  <a href="/ubicacion" class="btn btn-danger m-3">Cancelar</a>
   <button type="submit" class="btn btn-success m-3" value="save">Agregar</button>
           </form>
         </div>

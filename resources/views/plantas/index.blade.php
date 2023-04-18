@@ -25,19 +25,21 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">SENSOR</h4>
+            <h4 class="card-title">plantas</h4>
           </div>
           <div class="d-flex justify-content-end">
-            <a class="btn btn-success" href="sensor/create"><i class="fa-sharp fa-solid fa-boxes-stacked"></i></a>
+            <a class="btn btn-success" href="plantas/create"><i class="fa-sharp fa-solid fa-boxes-stacked"></i></a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead class="text-danger">
                   <th scope="col">ID</th>
-                  <th scope="col">Sensor</th>
-                  <th scope="col">status</th>
-                  <th class="text-center">cantidad</th>
+                  <th scope="col">nombre</th>
+                  <th scope="col">img</th>
+                  <th class="text-center">detalle</th>
+                  <th class="text-center">estatus</th>
+                  <th class="text-center">color</th>
                   <th class="text-center">Mostrar</th>
                   <th class="text-center">Eliminar</th>
                   <th class="text-center">Modificar</th>
@@ -47,18 +49,20 @@
                   <tr>
                     <td>{{$ubica->id}}</td>
                     <td>{{$ubica->nombre}}</td>
-                    <td>{{$ubica->status}}</td>
-                    <td>{{$ubica->cantidad}}</td>
+                    <td>{{$ubica->img}}</td>
+                    <td>{{$ubica->detalle}}</td>
+                    <td>{{$ubica->estatus}}</td>
+                    <td>{{$ubica->color}}</td>
 
 
-                  <td><a href="sensor/{{ $ubica->id }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
-                  <td> <form action="{{ route('sensor.destroy', $ubica->id) }}" class="d-inline formulario-eliminar" method="POST">
+                  <td><a href="plantas/{{ $ubica->id }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
+                  <td> <form action="{{ route('plantas.destroy', $ubica->id) }}" class="d-inline formulario-eliminar" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger m-6"><i class="fa-solid fa-trash"></i></button>
                   </form>
                                                 </td>
-                <td><a href="sensor/{{ $ubica->id }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
+                <td><a href="plantas/{{ $ubica->id }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
                 </tr>
                 @endforeach
                 </tbody>

@@ -54,7 +54,7 @@
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger m-6"><i class="fa-solid fa-trash"></i></button>
-                  </form>
+                </form>
                   </td>
                   <td><a href="t_usuario/{{ $tipo->id_t }}/edit" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a></td>
                 </tr>

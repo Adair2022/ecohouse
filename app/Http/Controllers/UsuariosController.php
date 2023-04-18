@@ -44,7 +44,7 @@ class UsuariosController extends Controller
             $rutaGuardarImagen='imagen/';
             $imagenUsuario= time().".".$imagen->extension();
             $imagen->move($rutaGuardarImagen,$imagenUsuario);
-            $usuarios['imagen']="$imagenUsuario";
+            $usuarios['img']="$imagenUsuario";
         }
         Usuario::create($usuarios);
         return redirect()->route('usuarios.index')->with('agregar','Ok');

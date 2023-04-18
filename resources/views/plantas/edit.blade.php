@@ -26,34 +26,45 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Editar Invernadero</h4>
+                        <h4 class="card-title">Editar Plantas</h4>
                     </div>
-                    <form action="{{ route('sensor.update', $sensor->id) }}" id="editar" method="POST"
+                    <form action="{{ route('plantas.update', $plantas->id) }}" id="editar" method="POST"
                         enctype="multipart/form-data">
                         {!! csrf_field() !!}
                         @method('PATCH')
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" value="{{ $sensor->id }}"
+                            <input class="form-control" type="text" value="{{ $plantas->id }}"
                                 aria-label="Disabled input example" disabled />
                             <label for="">ID</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" type="text" id="nombre" name="nombre"
-                                value="{{ $sensor->nombre }}" required><br>
+                                value="{{ $plantas->nombre }}" required><br>
                             <label for="floatingInput">Nombre</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="app" name="status"
-                                value="{{ $sensor->status }}" required><br>
+                            <input class="form-control" type="text" id="app" name="estatus"
+                                value="{{ $plantas->estatus }}" required><br>
                             <label for="floatingInput">status</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="apm" name="cantidad"
-                                value="{{ $sensor->cantidad }}" required><br>
-                            <label for="floatingInput"> cantidad</label>
+                            <input class="form-control" type="text" id="apm" name="detalle"
+                                value="{{ $plantas->detalle }}" required><br>
+                            <label for="floatingInput"> detalle</label>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="apm" name="estatus"
+                                value="{{ $plantas->estatus }}" required><br>
+                            <label for="floatingInput"> estatus</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="apm" name="color"
+                                value="{{ $plantas->color }}" required><br>
+                            <label for="floatingInput"> color</label>
                         </div>
 
-                        <a class="btn btn-danger m-1" href="/sensor">Cancelar</a>
+                        <a class="btn btn-danger m-1" href="/plantas">Cancelar</a>
                         <button type="submit" class="btn btn-success m-1" value="update">Guardar</button>
                     </form>
                 </div>
