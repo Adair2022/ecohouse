@@ -36,7 +36,7 @@
                 <thead class="text-danger">
                   <th scope="col">ID</th>
                   <th scope="col">nombre</th>
-                  <th scope="col">img</th>
+                  <th scope="col">imagen </th>
                   <th class="text-center">detalle</th>
                   <th class="text-center">estatus</th>
                   <th class="text-center">color</th>
@@ -49,7 +49,9 @@
                   <tr>
                     <td>{{$ubica->id}}</td>
                     <td>{{$ubica->nombre}}</td>
-                    <td>{{$ubica->img}}</td>
+                    <td class="border px-14 py-1">
+                        <img src="/imagen/{{$ubica->img}}" width="120px"/>
+                      </td>
                     <td>{{$ubica->detalle}}</td>
                     <td>{{$ubica->estatus}}</td>
                     <td>{{$ubica->color}}</td>

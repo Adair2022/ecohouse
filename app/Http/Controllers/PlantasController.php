@@ -43,14 +43,14 @@ class PlantasController extends Controller
     {
         //
 
-        $green=$request->all();
+        $usuarios=$request->all();
         if($imagen=$request->file('imagen')){
             $rutaGuardarImagen='imagen/';
             $imagenUsuario= time().".".$imagen->extension();
             $imagen->move($rutaGuardarImagen,$imagenUsuario);
-            $usuarios['imagen']="$imagenUsuario";
+            $usuarios['img']="$imagenUsuario";
         }
-        plantas::create($green);
+        plantas::create($usuarios);
         return redirect()->route('plantas.index')->with('agregar','Ok');
     }
 
@@ -94,10 +94,18 @@ class PlantasController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $plantas = plantas::findOrFail($id);
+        $usuario = plantas::findOrFail($id);
 
-        $green = $request->all();
-        $plantas->update($green);
+        $datos_usuario = $request->all();
+
+        if ($imagen=$request->file('img')) {
+            $rutaGuardarImagen='imagen/';
+                $imagenUsuario= time().".".$imagen->extension();
+                $imagen->move($rutaGuardarImagen,$imagenUsuario);
+                $datos_usuario['img']="$imagenUsuario";
+        }
+
+        $usuario->update($datos_usuario);
 
         return redirect()->route('plantas.index')->with('editar', 'Ok');
     }

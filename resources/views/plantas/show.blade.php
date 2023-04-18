@@ -45,7 +45,9 @@
                                   <tr>
                                     <td>{{$green->id}}</td>
                                     <td>{{$green->nombre}}</td>
-                                    <td>{{$green->img}}</td>
+                                    <td class="border px-14 py-1">
+                                        <img src="/imagen/{{$green->img}}" width="120px"/>
+                                      </td>
                                     <td>{{$green->detalle}}</td>
                                     <td>{{$green->estatus}}</td>
                                     <td>{{$green->color}}</td>
