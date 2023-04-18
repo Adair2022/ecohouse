@@ -38,8 +38,7 @@
                   <th scope="col">numero de sruco</th>
                   <th class="text-center">humedad minima</th>
                   <th class="text-center">humedad maxima</th>
-                  <th class="text-center">temperatuta minima</th>
-                  <th class="text-center">temperatura maxima</th>
+
                   <th class="text-center">Mostrar</th>
                   <th class="text-center">Eliminar</th>
                   <th class="text-center">Modificar</th>

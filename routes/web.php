@@ -10,6 +10,7 @@ use App\Http\Controllers\SurcosController;
 use App\Http\Controllers\RequerimientosController;
 use App\Http\Controllers\EstadosController;
 use App\Http\Controllers\PlantasController;
+use App\Http\Controllers\UbicacionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
